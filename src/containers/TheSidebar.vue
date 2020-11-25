@@ -26,3 +26,15 @@
 		},
 	};
 </script>
+
+<style lang="scss" scoped>
+	.c-sidebar-brand {
+		justify-content: flex-start;
+	}
+	.c-sidebar-brand-full {
+		width: 123px;
+		height: 32px;
+		margin-left: 20px;
+		display: block;
+	}
+</style>
