@@ -10,20 +10,48 @@ import Login from '@/views/pages/Login'
 Vue.use(Router)
 
 
+//!gifts pages
+import giftPointsList from '@/views/pages/gifts/gift-points-list'
+
 
 function configRoutes() {
   return [
     {
       path: '/',
       name: 'Home',
-      redirect: "/dashboard",
+      redirect: "/panel",
       component: TheContainer,
       children: [
         {
-          path: 'dashboard',
-          name: 'Dashboard',
+          path: 'panel',
+          name: 'Главная панель',
           component: Dashboard,
-          meta: { auth: true, permission: true },
+          meta: { auth: true, permission: true, title: 'Главная панель' },
+        }, {
+          path: 'users',
+          name: 'Пользователи',
+          component: Dashboard,
+          meta: { auth: true, permission: true, title: 'Пользователи' },
+        }, {
+          path: 'contractors',
+          name: 'Контрагенты',
+          component: Dashboard,
+          meta: { auth: true, permission: true, title: 'Контрагенты' },
+        }, {
+          path: 'types-of-gifts',
+          name: 'Типы подарков',
+          component: Dashboard,
+          meta: { auth: true, permission: true, title: 'Типы подарков' },
+        }, {
+          path: 'gifts-points',
+          name: 'Точки выдачи подарков',
+          component: giftPointsList,
+          meta: { auth: true, permission: true, title: 'Точки выдачи подарков' },
+        }, {
+          path: 'maps',
+          name: 'Карты',
+          component: Dashboard,
+          meta: { auth: true, permission: true, title: 'Карты' },
         },
       ]
     },
