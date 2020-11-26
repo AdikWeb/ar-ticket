@@ -4,94 +4,34 @@ export default [
     _children: [
       {
         _name: 'CSidebarNavItem',
-        name: 'Dashboard',
-        to: '/dashboard',
-        icon: 'cil-speedometer',
-        badge: {
-          color: 'primary',
-          text: 'NEW'
-        }
-      },
-      {
+        name: 'Главная панель',
+        to: '/panel',
+        icon: 'panel',
+      }, {
         _name: 'CSidebarNavItem',
-        name: 'Login',
-        to: '/pages/login'
-      },
-      {
+        name: 'Пользователи',
+        to: '/users',
+        icon: 'custUser',
+      }, {
         _name: 'CSidebarNavItem',
-        name: 'Register',
-        to: '/pages/register'
-      },
-      {
-        _name: 'CSidebarNavDropdown',
-        name: 'Users',
-        route: 'users',
-        icon: 'cil-bell',
-        items: [
-          {
-            name: 'List',
-            to: '/users/list'
-          },
-          {
-            name: 'Create',
-            to: '/users/create'
-          },
-        ]
-      },
-      {
-        _name: 'CSidebarNavDropdown',
-        name: 'Actions',
-        route: '/actions',
-        icon: 'cil-bell',
-        items: [
-          {
-            name: 'List',
-            to: '/actions/list'
-          },
-          {
-            name: 'Create',
-            to: '/actions/create'
-          }
-        ]
-      },
-      {
+        name: 'Контрагенты',
+        to: '/contractors',
+        icon: 'packageIcon',
+      }, {
         _name: 'CSidebarNavItem',
-        name: 'Map',
-        to: '/map'
-      },
-      {
+        name: 'Типы подарков',
+        to: '/types-of-gifts',
+        icon: 'gift',
+      }, {
         _name: 'CSidebarNavItem',
-        name: 'Error 404',
-        to: '/pages/404'
-      },
-      {
+        name: 'Точки выдачи подарков',
+        to: '/gifts-points',
+        icon: 'geo-alt',
+      }, {
         _name: 'CSidebarNavItem',
-        name: 'Error 500',
-        to: '/pages/500'
-      },
-      {
-        _name: 'CSidebarNavDropdown',
-        name: 'Buttons',
-        route: '/buttons',
-        icon: 'cil-cursor',
-        items: [
-          {
-            name: 'Buttons',
-            to: '/buttons/standard-buttons'
-          },
-          {
-            name: 'Button Dropdowns',
-            to: '/buttons/dropdowns'
-          },
-          {
-            name: 'Button Groups',
-            to: '/buttons/button-groups'
-          },
-          {
-            name: 'Brand Buttons',
-            to: '/buttons/brand-buttons'
-          }
-        ]
+        name: 'Карты',
+        to: '/maps',
+        icon: 'cil-map',
       },
     ]
   }
