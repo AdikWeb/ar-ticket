@@ -43,7 +43,7 @@ function configRoutes() {
           component: Dashboard,
           meta: { auth: true, permission: true, title: 'Типы подарков' },
         }, {
-          path: 'gifts-points',
+          path: '/gifts-points/:id?',
           name: 'Точки выдачи подарков',
           component: giftPointsList,
           meta: { auth: true, permission: true, title: 'Точки выдачи подарков' },

@@ -3,7 +3,9 @@
 		<CCard>
 			<CCardBody>
 				<div class="d-flex align-items-center mb-4">
-					<h5><b>Точки выдачи подарков</b></h5>
+					<h5>
+						<b>Точки выдачи подарков</b>
+					</h5>
 				</div>
 				<CTabs :active-tab="0">
 					<CTab title="Все">
