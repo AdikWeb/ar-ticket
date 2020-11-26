@@ -13,7 +13,6 @@ Vue.use(Router)
 //!gifts pages
 import giftPointsList from '@/views/pages/gifts/gift-points-list'
 
-
 function configRoutes() {
   return [
     {

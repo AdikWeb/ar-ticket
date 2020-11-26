@@ -1,1 +1,13 @@
 // Here you can add other styles
+td.table-align-center,
+th.table-align-center {
+	vertical-align: middle;
+}
+.light-border-table {
+	table {
+		td,
+		th {
+			border-color: #ebedef;
+		}
+	}
+}
