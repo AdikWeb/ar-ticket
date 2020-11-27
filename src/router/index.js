@@ -12,7 +12,7 @@ Vue.use(Router)
 
 //!gifts pages
 import giftPointsList from '@/views/pages/gifts/gift-points-list'
-
+import createGiftPoint from '@/views/pages/gifts/create-gift-point'
 function configRoutes() {
   return [
     {
@@ -42,10 +42,28 @@ function configRoutes() {
           component: Dashboard,
           meta: { auth: true, permission: true, title: 'Типы подарков' },
         }, {
-          path: '/gifts-points/:id?',
+          path: '/gifts-points/',
           name: 'Точки выдачи подарков',
-          component: giftPointsList,
+          redirect: '/gifts-points/list',
+          component: {
+            render(c) {
+              return c('router-view')
+            }
+          },
           meta: { auth: true, permission: true, title: 'Точки выдачи подарков' },
+          children: [
+            {
+              path: 'list',
+              name: 'Список',
+              component: giftPointsList,
+              meta: { auth: true, permission: true, title: 'Точки выдачи подарков' },
+            }, {
+              path: 'create',
+              name: 'Создать точку выдачи подарков',
+              component: createGiftPoint,
+              meta: { auth: true, permission: true, title: 'Создать точку выдачи подарков' },
+            },
+          ]
         }, {
           path: 'maps',
           name: 'Карты',

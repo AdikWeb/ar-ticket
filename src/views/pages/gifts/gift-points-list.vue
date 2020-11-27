@@ -3,7 +3,7 @@
 		<CCard>
 			<CCardBody>
 				<div class="d-flex align-items-center mb-3">
-					<CButton color="primary" class="mr-3"><CIcon size="sm" class="mr-2" name="cust-plus" /><span>Добавить</span></CButton>
+					<CButton to="create" color="primary" class="mr-3"><CIcon size="sm" class="mr-2" name="cust-plus" /><span>Добавить</span></CButton>
 					<CButton color="secondary" class="mr-3" disabled variant="outline"><CIcon size="sm" class="mr-2" name="cust-pencil" /><span>Добавить</span></CButton>
 					<CButton color="secondary" disabled variant="outline"><CIcon size="sm" class="mr-2" name="cust-trash" /><span>Удалить</span></CButton>
 				</div>
@@ -22,6 +22,7 @@
 
 <script>
 	import { LoadGiftsPoint } from "@/api/GiftsApi";
+
 	export default {
 		name: "gift-points-list",
 		data() {

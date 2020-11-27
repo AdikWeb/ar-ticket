@@ -44,7 +44,7 @@
 </template>
 
 <script>
-	import { LoginUser } from "@/api/UserApi";
+	import { LoginUser } from "@/api/user/UserApi";
 	export default {
 		name: "Login",
 		data() {

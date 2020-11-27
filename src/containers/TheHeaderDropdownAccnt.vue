@@ -7,7 +7,6 @@
 				</div>
 			</CHeaderNavLink>
 		</template>
-
 		<CDropdownItem @click="$store.dispatch('logout')"> <CIcon name="cil-lock-locked" /> Logout </CDropdownItem>
 	</CDropdown>
 </template>
