@@ -79,7 +79,9 @@ import {
   cilXCircle,
   cilMap,
   cilPlus,
-
+  cilTerrain,
+  cilSatelite,
+  cilSad
 } from '@coreui/icons'
 import { logo } from './logo'
 
@@ -89,6 +91,9 @@ export const iconsSet = Object.assign(
   {},
   { logo, panel, custUser, packageIcon, gift, geoAlt, noImageSvg, custPlus, custPencil, custTrash },
   {
+    cilSad,
+    cilSatelite,
+    cilTerrain,
     cilPlus,
     cilMap,
     cilArrowRight,

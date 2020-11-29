@@ -1,5 +1,6 @@
 import 'core-js/stable'
 import Vue from 'vue'
+import('@/components');
 import App from './App'
 import router from './router'
 import CoreuiVue from '@coreui/vue'

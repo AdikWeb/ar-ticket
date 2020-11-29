@@ -10,8 +10,7 @@
 				<CDataTable class="light-border-table" :items="computed_items" :fields="fields" :items-per-page="5" pagination>
 					<template #photo="{item}">
 						<td>
-							<img v-if="item.photo" class="photo" :src="item.photo" alt="" />
-							<CIcon v-else name="noImageSvg" size="custom-size" :height="64" />
+							<v-image class-name="photo" :src="item.photo" :height="64" />
 						</td>
 					</template>
 				</CDataTable>
@@ -57,7 +56,7 @@
 </script>
 
 <style lang="scss" scoped>
-	.photo {
+	/deep/ .photo {
 		width: 64px;
 		height: 64px;
 		display: block;

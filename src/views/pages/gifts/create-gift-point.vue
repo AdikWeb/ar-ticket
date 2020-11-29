@@ -35,7 +35,16 @@
 						<CInput label="Адрес" />
 					</CCol>
 				</CRow>
+				<CRow>
+					<CCol md="6">
+						<v-file label="Фото точки выдачи" />
+					</CCol>
+				</CRow>
 			</CCardBody>
+			<CCardFooter>
+				<CButton color="primary" class="mr-3">Сохранить</CButton>
+				<CButton variant="outline" color="dark">Отменить</CButton>
+			</CCardFooter>
 		</CCard>
 	</div>
 </template>
@@ -51,6 +60,7 @@
 					map: null,
 					ymaps: null,
 					controll: null,
+					test: [],
 				},
 			};
 		},
