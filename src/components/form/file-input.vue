@@ -25,7 +25,6 @@
 			file(e) {
 				this.file_name = e.target.value.replace(/.*[\/\\]/, "");
 				this.$emit("change", e);
-				this.$emit("update:testa", e);
 			},
 		},
 	};
