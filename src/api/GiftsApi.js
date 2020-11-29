@@ -21,4 +21,22 @@ export const LoadGiftsPoint = async (params) => {
         }, 1000)
     })
 };
+//TODO Переделать на запросы к апи
+export const LoadTypeOfGifts = async (params) => {
+
+    let test = [
+        { id: '1', gift_name: 'Название подарка 1', description: 'Элементы политического процесса объявлены нарушающими общечеловеческие нормы этики и морали и морали и морали...', photo: "https://img.freepik.com/free-vector/christmas-new-year-s-day-red-gift-box-white-background-illustration_164911-157.jpg?size=626&ext=jpg" },
+        { id: '2', gift_name: 'Название подарка 2', description: 'Элементы политического процесса объявлены нарушающими общечеловеческие нормы этики и морали и морали и морали...', photo: "https://img.freepik.com/free-vector/christmas-new-year-s-day-red-gift-box-white-background-illustration_164911-157.jpg?size=626&ext=jpg" },
+        { id: '3', gift_name: 'Название подарка 3', description: 'Элементы политического процесса объявлены нарушающими общечеловеческие нормы этики и морали и морали и морали...', photo: "https://img.freepik.com/free-vector/christmas-new-year-s-day-red-gift-box-white-background-illustration_164911-157.jpg?size=626&ext=jpg" },
+        { id: '4', gift_name: 'Название подарка 4', description: 'Элементы политического процесса объявлены нарушающими общечеловеческие нормы этики и морали и морали и морали...', photo: "https://img.freepik.com/free-vector/christmas-new-year-s-day-red-gift-box-white-background-illustration_164911-157.jpg?size=626&ext=jpg" },
+        { id: '5', gift_name: 'Название подарка 5', description: 'Элементы политического процесса объявлены нарушающими общечеловеческие нормы этики и морали и морали и морали...', photo: "https://img.freepik.com/free-vector/christmas-new-year-s-day-red-gift-box-white-background-illustration_164911-157.jpg?size=626&ext=jpg" },
+    ];
+
+    return new Promise((res) => {
+        setTimeout(() => {
+            res(test)
+        }, 1000)
+    })
+};
+
 
