@@ -28,11 +28,12 @@
 			return {
 				loaded: false,
 				img_error: false,
-				preloader: {
-					w: 0,
-					h: 0,
-				},
 			};
+		},
+		watch: {
+			src() {
+				this.loaded = this.img_error = false;
+			},
 		},
 		methods: {
 			loaded_image() {
@@ -80,7 +81,9 @@
 	.fade-leave-active {
 		transition: opacity 0.5s;
 	}
-	.fade-enter,
+	.fade-enter {
+		transition: 0s;
+	}
 	.fade-leave-to {
 		opacity: 0;
 	}
