@@ -1,12 +1,10 @@
 <template>
-    <div>
-    <CRow>
-        <CCol sm="6">
-        <CCard>
-          <CCardHeader>
-            <strong>User </strong><small>Form</small>
-          </CCardHeader>
-          <CCardBody>
+	<div class="create-type-of-gift">
+		<CCard>
+			<CCardHeader>
+				<h4><b>Добавить ползователя</b></h4>
+			</CCardHeader>
+			<CCardBody>
              <CForm @submit.prevent="onSubmit"> 
              <CInput
                 label="Enter your name"
@@ -47,20 +45,18 @@
               />
              </CForm>
           </CCardBody>
-          <CCardFooter>
-            <CButton size="sm" color="primary"><CIcon name="cil-check-circle"/> Submit</CButton>
+			<CCardFooter>
+            <CButton type="submit" size="sm" color="primary"><CIcon name="cil-check-circle"/> Сохранить</CButton>
+            <CButton type="reset" size="sm" color="danger"><CIcon name="cil-ban"/> Сбросить</CButton>
           </CCardFooter>
-        </CCard>
-      </CCol>
-
-    </CRow>
-    </div>
+		</CCard>
+	</div>
 </template>
 
 <script>
 
 export default {
-  name: 'UsersCreate',
+  name: 'user-create',
   data(){
     return {
       name: null,

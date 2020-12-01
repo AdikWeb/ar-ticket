@@ -10,9 +10,15 @@ import Login from '@/views/pages/Login'
 Vue.use(Router)
 
 
-//!gifts pages
+//!gifts pages 
 import giftPointsList from '@/views/pages/gifts/gift-points-list'
 import createGiftPoint from '@/views/pages/gifts/create-gift-point'
+import typeOfGiftsList from '@/views/pages/gifts/type-of-gifts-list'
+import createTypeOfGifts from '@/views/pages/gifts/create-type-of-gift'
+
+//user pages
+import userList from '@/views/pages/users/users-list'
+import userCreate from '@/views/pages/users/user-create'
 function configRoutes() {
   return [
     {
@@ -29,7 +35,12 @@ function configRoutes() {
         }, {
           path: 'users',
           name: 'Пользователи',
-          component: Dashboard,
+          component: userList,
+          meta: { auth: true, permission: true, title: 'Пользователи' },
+        },{
+          path: 'user/create',
+          name: 'Создание Пользователя',
+          component: userCreate,
           meta: { auth: true, permission: true, title: 'Пользователи' },
         }, {
           path: 'contractors',
@@ -37,11 +48,29 @@ function configRoutes() {
           component: Dashboard,
           meta: { auth: true, permission: true, title: 'Контрагенты' },
         }, {
-          path: 'types-of-gifts',
+          path: '/types-of-gifts/',
           name: 'Типы подарков',
-          component: Dashboard,
-          meta: { auth: true, permission: true, title: 'Типы подарков' },
-        }, {
+          redirect: '/types-of-gifts/list',
+          component: {
+            render(c) {
+              return c('router-view')
+            }
+          },
+          meta: { auth: true, permission: true, title: 'Точки выдачи подарков' },
+          children: [
+            {
+              path: 'list',
+              name: 'Список Типов Подарков',
+              component: typeOfGiftsList,
+              meta: { auth: true, permission: true, title: 'Список типов подарков' },
+            }, {
+              path: 'create',
+              name: 'Создать тип подарка',
+              component: createTypeOfGifts,
+              meta: { auth: true, permission: true, title: 'Создать тип подарка' },
+            },
+          ]
+        },  {
           path: '/gifts-points/',
           name: 'Точки выдачи подарков',
           redirect: '/gifts-points/list',
