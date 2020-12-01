@@ -53,7 +53,7 @@ function configRoutes() {
           meta: { auth: true, permission: true, title: 'Точки выдачи подарков' },
           children: [
             {
-              path: 'list',
+              path: 'list/:page?',
               name: 'Список',
               component: giftPointsList,
               meta: { auth: true, permission: true, title: 'Точки выдачи подарков' },

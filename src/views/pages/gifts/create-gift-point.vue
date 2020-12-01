@@ -43,7 +43,7 @@
 			</CCardBody>
 			<CCardFooter>
 				<CButton color="primary" class="mr-3">Сохранить</CButton>
-				<CButton variant="outline" color="dark">Отменить</CButton>
+				<CButton variant="outline" @click="$router.go(-1)" color="dark">Отменить</CButton>
 			</CCardFooter>
 		</CCard>
 	</div>

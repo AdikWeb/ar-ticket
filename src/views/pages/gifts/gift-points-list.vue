@@ -3,7 +3,7 @@
 		<CCard>
 			<CCardBody>
 				<div class="d-flex align-items-center mb-3">
-					<CInput class="m-0 table-search-input">
+					<CInput v-model="serachByName" class="m-0 table-search-input">
 						<template #append>
 							<CButton color="primary">
 								<CIcon class="m-0" name="cil-magnifying-glass" />
@@ -12,16 +12,22 @@
 					</CInput>
 
 					<div class="d-flex align-items-center ml-auto">
-						<CButton to="create" color="primary" class="mr-3"><CIcon size="sm" class="mr-2" name="cust-plus" /><span>Добавить</span></CButton>
-						<CButton color="secondary" class="mr-3" disabled variant="outline"><CIcon size="sm" class="mr-2" name="cust-pencil" /><span>Изменить</span></CButton>
+						<CButton to="/gifts-points/create" color="primary" class="mr-3"><CIcon size="sm" class="mr-2" name="cust-plus" /><span>Добавить</span></CButton>
 						<CButton color="secondary" disabled variant="outline"><CIcon size="sm" class="mr-2" name="cust-trash" /><span>Удалить</span></CButton>
 					</div>
 				</div>
 
-				<CDataTable class="light-border-table" :items="computed_items" :fields="fields" :items-per-page="1" :pagination="{ align: 'center' }">
+				<CDataTable class="light-border-table" :items="computed_items" :fields="fields" :items-per-page="serachByName.length !== 0 ? computed_items.length : 1" :pagination="{ align: 'center' }">
 					<template #photo="{item}">
 						<td>
 							<v-image class-name="photo" :src="item.photo" :height="64" />
+						</td>
+					</template>
+					<template #edit="{item}">
+						<td class="table-align-center">
+							<CButton to="#" color="link">
+								<CIcon class="icon--dark" name="cust-pencil" />
+							</CButton>
 						</td>
 					</template>
 				</CDataTable>
@@ -37,21 +43,27 @@
 		name: "gift-points-list",
 		data() {
 			return {
-				page: 1,
+				currentPage: +this.$route.query.page || 1,
+				serachByName: this.$route.query.search || "",
 				fields: [
 					{ key: "photo", label: "Фото", _classes: "table-align-center" },
 					{ key: "name", label: "Наименование", _classes: "table-align-center" },
 					{ key: "description", label: "Описание", _classes: "table-align-center" },
 					{ key: "geo", label: "Геопозиция", _classes: "table-align-center" },
 					{ key: "address", label: "Адрес", _classes: "table-align-center" },
+					{ key: "edit", label: "Действия", _classes: "table-align-center" },
 				],
 				items: [],
 			};
 		},
-
+		watch: {
+			serachByName(search) {
+				this.$router.push({ query: { search } });
+			},
+		},
 		computed: {
 			computed_items() {
-				return this.items;
+				return this.items.filter((item) => new RegExp(this.serachByName, "gmui").test(item.name));
 			},
 		},
 
